@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Assist Pro</title>
+    <meta name="description" content="Campus Assist Pro is a professional smart-campus dashboard for feedback, lost & found, events, and AI assistance. Global shared data for all users.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <div class="page-shell">
+
+        <!-- ===== TOP NAV BAR ===== -->
+        <header class="topbar">
+            <div class="brand glow">
+                <div class="brand-mark">🎓</div>
+                <div>
+                    <span class="micro-tagline">AI-powered campus intelligence system</span>
+                    <h1>Campus Assist Pro</h1>
+                    <p>Your smarter, cleaner, AI-ready campus companion</p>
+                </div>
+            </div>
+
+            <div class="topbar-side">
+                <!-- Global sync status cluster -->
+                <div class="status-cluster">
+                    <span class="status-pill" id="syncStatusPill" data-tone="muted">
+                        <span class="status-dot" id="syncDot"></span>
+                        <span id="syncStatusText">Connecting…</span>
+                    </span>
+                    <span class="status-pill" data-tone="muted" id="userCountPill">
+                        🌐 Global Data — All users see the same data
+                    </span>
+                    <span class="status-pill" data-tone="muted" id="lastSyncPill">
+                        🔄 Last sync: —
+                    </span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="top-nav">
+                    <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+                    <button class="nav-btn" data-section="mess">Mess Feedback</button>
+                    <button class="nav-btn" data-section="lost">Lost &amp; Found</button>
+                    <button class="nav-btn" data-section="event">Events</button>
+                    <button class="nav-btn" data-section="ai">Campus AI</button>
+                    <button class="nav-btn" data-section="about">About</button>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- ===== DASHBOARD SECTION ===== -->
+            <section class="hero section-panel active animate-hero" id="dashboard">
+                <div class="hero-copy">
+                    <span class="eyebrow">Professional smart-campus dashboard · Global shared data</span>
+                    <h2>Dashboard for Mess Feedback, Lost &amp; Found, Events, and Campus AI.</h2>
+                    <p>
+                        A polished main dashboard built around the core student workflow. The interface is focused,
+                        visually strong, easy to scan, and designed to feel premium without removing any of your original functions.
+                        All data is stored globally — every student who visits this website sees and shares the same real-time data.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="primary-btn pulse-btn" data-jump="ai">Open Campus AI</button>
+                        <button class="ghost-btn hover-raise" data-jump="lost">Go to Lost &amp; Found</button>
+                    </div>
+
+                    <div class="hero-badges">
+                        <span>Dashboard-first UI</span>
+                        <span>Clear visual hierarchy</span>
+                        <span>Professional animations</span>
+                        <span>All original functions kept</span>
+                        <span>🌐 Global shared data</span>
+                        <span>🔄 Auto-refresh every 15s</span>
+                    </div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-card highlight-card">
+                        <span>Main modules</span>
+                        <strong>4</strong>
+                        <small>Feedback, items, events, AI support</small>
+                    </div>
+                    <div class="stat-card">
+                        <span>Data mode</span>
+                        <strong>Global</strong>
+                        <small>Shared cloud storage — all users see same data</small>
+                    </div>
+                    <div class="stat-card">
+                        <span>Live records</span>
+                        <strong id="totalRecordsCount">—</strong>
+                        <small>Lost items + found items + event ideas combined</small>
+                    </div>
+                    <div class="stat-card">
+                        <span>Experience</span>
+                        <strong>Pro UI</strong>
+                        <small>Larger typography and stronger visuals</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== FEATURE CARDS GRID ===== -->
+            <section class="feature-grid">
+                <article class="feature-card hover-raise" data-jump="mess">
+                    <div class="feature-icon icon-mess">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                            <path d="M18 12h28a8 8 0 0 1 8 8v5a11 11 0 0 1-11 11H21A11 11 0 0 1 10 25v-5a8 8 0 0 1 8-8Z"></path>
+                            <path d="M18 36h28l-3 12a6 6 0 0 1-6 4H27a6 6 0 0 1-6-4l-3-12Z"></path>
+                            <path d="M23 8v10M32 8v10M41 8v10"></path>
+                        </svg>
+                    </div>
+                    <h3>Mess Feedback</h3>
+                    <p>Analyze feedback clearly, show sentiment instantly, and guide service improvements with a cleaner dashboard layout.</p>
+                </article>
+
+                <article class="feature-card hover-raise" data-jump="lost">
+                    <div class="feature-icon icon-lost">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                            <circle cx="28" cy="28" r="14"></circle>
+                            <path d="M38 38l12 12"></path>
+                            <path d="M22 28h12M28 22v12"></path>
+                        </svg>
+                    </div>
+                    <h3>Lost &amp; Found</h3>
+                    <p>Keep reports organized, more readable, and easy to scan with larger typography, stronger cards, and clearer status blocks.</p>
+                </article>
+
+                <article class="feature-card hover-raise" data-jump="event">
+                    <div class="feature-icon icon-event">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                            <rect x="12" y="14" width="40" height="36" rx="10"></rect>
+                            <path d="M20 10v10M44 10v10M12 26h40"></path>
+                            <path d="M24 34h7M33 34h7M24 41h16"></path>
+                        </svg>
+                    </div>
+                    <h3>Events</h3>
+                    <p>Present event suggestions in a more modern and impactful way while keeping your original add-and-display workflow intact.</p>
+                </article>
+
+                <article class="feature-card hover-raise" data-jump="ai">
+                    <div class="feature-icon icon-ai">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                            <rect x="16" y="18" width="32" height="24" rx="10"></rect>
+                            <circle cx="27" cy="30" r="3"></circle>
+                            <circle cx="37" cy="30" r="3"></circle>
+                            <path d="M24 38c2 2 4.5 3 8 3s6-1 8-3"></path>
+                            <path d="M32 10v8M12 30h6M46 30h6"></path>
+                        </svg>
+                    </div>
+                    <h3>Campus AI</h3>
+                    <p>Deliver concise campus support answers in a short, structured style that feels helpful, professional, and easy to read.</p>
+                </article>
+            </section>
+
+            <!-- ===== MESS FEEDBACK SECTION ===== -->
+            <section class="section-panel" id="mess">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">Main module</span>
+                        <h2>Mess Feedback</h2>
+                    </div>
+                    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                        <span class="mini-pill" id="feedbackGlobalNote">🌐 Analysis is local · submissions go to global log</span>
+                        <button class="ghost-btn small-btn" id="clearFeedbackBtn">Clear</button>
+                    </div>
+                </div>
+                <div class="panel-grid two-col">
+                    <div class="card-panel glass-strong">
+                        <label for="feedback">Student feedback</label>
+                        <textarea id="feedback" placeholder="Example: The food quality was good today but the waiting time was too long."></textarea>
+                        <div class="button-row">
+                            <button class="primary-btn" id="analyzeFeedbackBtn">Analyze feedback</button>
+                            <button class="ghost-btn" id="submitFeedbackBtn">Submit to global log</button>
+                            <button class="ghost-btn" id="sendFeedbackToAiBtn">Ask AI for improvement ideas</button>
+                        </div>
+                    </div>
+                    <div class="card-panel result-panel glass-strong">
+                        <div class="result-top">
+                            <span id="feedbackMood" class="pill neutral">Neutral</span>
+                            <span id="feedbackScore" class="score-pill">Score: 0</span>
+                        </div>
+                        <h3>Analysis Result</h3>
+                        <p id="feedbackResult">Write feedback and click analyze to see the sentiment result.</p>
+                        <div class="suggestion-box">
+                            <h4>Suggested action</h4>
+                            <p id="feedbackSuggestion">Suggestions will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Global Feedback Log -->
+                <div class="card-panel list-panel wide-panel glass-strong" style="margin-top:18px;">
+                    <div class="list-head">
+                        <h3>Global Feedback Log</h3>
+                        <span id="feedbackCount" class="mini-pill">0 entries</span>
+                    </div>
+                    <div id="feedbackList" class="list-stack empty-state">No feedback submitted yet.</div>
+                </div>
+            </section>
+
+            <!-- ===== LOST & FOUND SECTION ===== -->
+            <section class="section-panel" id="lost">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">Main module</span>
+                        <h2>Lost &amp; Found</h2>
+                    </div>
+                    <span class="mini-pill">🌐 All reports are shared globally with every user</span>
+                </div>
+                <div class="panel-grid two-col">
+                    <div class="card-panel glass-strong">
+                        <h3>Report lost item</h3>
+                        <div class="form-grid">
+                            <input id="studentName" placeholder="Your name">
+                            <input id="studentId" placeholder="Student ID">
+                            <input id="contact" placeholder="Contact number or email">
+                            <input id="lostItem" placeholder="Lost item details">
+                        </div>
+                        <button class="primary-btn" id="addLostBtn">
+                            <span id="addLostBtnText">Submit lost report</span>
+                        </button>
+                    </div>
+                    <div class="card-panel glass-strong">
+                        <h3>Report found item</h3>
+                        <div class="form-grid">
+                            <input id="foundInfo" placeholder="Example: Black wallet found near library gate">
+                            <input id="foundReporter" placeholder="Your name (optional)">
+                        </div>
+                        <button class="primary-btn" id="addFoundBtn">
+                            <span id="addFoundBtnText">Submit found report</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-grid two-col" style="margin-top:18px;">
+                    <div class="card-panel list-panel glass-strong">
+                        <div class="list-head">
+                            <h3>Lost item reports</h3>
+                            <span id="lostCount" class="mini-pill">0 items</span>
+                        </div>
+                        <div id="items" class="list-stack empty-state">No lost items reported yet.</div>
+                    </div>
+                    <div class="card-panel list-panel glass-strong">
+                        <div class="list-head">
+                            <h3>Found item reports</h3>
+                            <span id="foundCount" class="mini-pill">0 items</span>
+                        </div>
+                        <div id="foundList" class="list-stack empty-state">No found items reported yet.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== EVENTS SECTION ===== -->
+            <section class="section-panel" id="event">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">Main module</span>
+                        <h2>Events</h2>
+                    </div>
+                    <span class="mini-pill">🌐 Suggestions are visible to all campus users</span>
+                </div>
+                <div class="panel-grid two-col">
+                    <div class="card-panel glass-strong">
+                        <label for="eventIdea">Suggest a campus event</label>
+                        <textarea id="eventIdea" placeholder="Example: Organize an AI innovation hackathon with startup mentors and live demos."></textarea>
+                        <div class="button-row">
+                            <button class="primary-btn" id="addEventBtn">
+                                <span id="addEventBtnText">Add suggestion</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-panel accent-panel glass-strong">
+                        <h3>Strong event ideas should be</h3>
+                        <ul class="clean-list">
+                            <li>Useful for students</li>
+                            <li>Easy to understand</li>
+                            <li>Creative and practical</li>
+                            <li>Good for participation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-panel list-panel wide-panel glass-strong" style="margin-top:18px;">
+                    <div class="list-head">
+                        <h3>Submitted suggestions</h3>
+                        <span id="eventCount" class="mini-pill">0 ideas</span>
+                    </div>
+                    <div id="eventList" class="list-stack empty-state">No event suggestions submitted yet.</div>
+                </div>
+            </section>
+
+            <!-- ===== CAMPUS AI SECTION ===== -->
+            <section class="section-panel" id="ai">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">Main module</span>
+                        <h2>Campus AI</h2>
+                    </div>
+                    <a class="doc-link" href="https://openrouter.ai/docs/guides/routing/routers/free-models-router" target="_blank" rel="noopener noreferrer">Free model docs ↗</a>
+                </div>
+                <div class="panel-grid two-col">
+                    <div class="card-panel glass-strong">
+                        <label for="apiKey">OpenRouter API key</label>
+                        <input id="apiKey" type="password" placeholder="Paste your OpenRouter key here">
+                        <small class="helper-text">Your API key is stored only in your browser's local storage. It is never sent to our servers — only used to call OpenRouter directly from your browser.</small>
+
+                        <label for="aiQuestion" style="margin-top:18px;">Ask Campus AI</label>
+                        <textarea id="aiQuestion" placeholder="Example: Give me 5 practical ideas to improve hostel life for first-year students."></textarea>
+
+                        <div class="quick-prompts">
+                            <button class="chip-btn" data-prompt="Give me 5 low-budget campus event ideas.">Event ideas</button>
+                            <button class="chip-btn" data-prompt="How can our mess service improve hygiene and student satisfaction?">Mess improvement</button>
+                            <button class="chip-btn" data-prompt="Write a polite lost-and-found announcement for a student notice board.">Notice draft</button>
+                            <button class="chip-btn" data-prompt="List 5 practical ways students can improve their campus experience.">Campus tips</button>
+                        </div>
+
+                        <div class="button-row" style="margin-top:18px;">
+                            <button class="primary-btn" id="askAiBtn">Ask AI</button>
+                            <button class="ghost-btn" id="clearAiBtn">Clear</button>
+                        </div>
+                    </div>
+                    <div class="card-panel result-panel ai-panel glass-strong">
+                        <div class="ai-meta">
+                            <span class="mini-pill">Model route: openrouter/free</span>
+                            <span class="mini-pill" id="aiStatus">Idle</span>
+                        </div>
+                        <h3>AI Response</h3>
+                        <div id="aiAnswer" class="ai-answer fade-in">
+                            Your AI response will appear here in a concise, structured format.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== ABOUT SECTION ===== -->
+            <section class="section-panel" id="about">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">Project summary</span>
+                        <h2>About Campus Assist Pro</h2>
+                    </div>
+                </div>
+                <div class="panel-grid two-col">
+                    <div class="card-panel glass-strong">
+                        <h3>Main focus</h3>
+                        <ul class="clean-list">
+                            <li>Dashboard-first visual experience</li>
+                            <li>Bigger section titles and stronger readability</li>
+                            <li>Cleaner main theme for feedback, lost &amp; found, events, and AI</li>
+                            <li>Improved professional styling without removing existing functions</li>
+                            <li>🌐 True global shared data — every user on the site shares the same live database</li>
+                            <li>🔄 Auto-refreshes every 15 seconds to show latest entries from all users</li>
+                        </ul>
+                    </div>
+                    <div class="card-panel glass-strong">
+                        <h3>Design improvements</h3>
+                        <p>
+                            The interface is now more visual, more focused on the main modules, and refined with stronger hierarchy,
+                            larger icons, better spacing, polished cards, and smoother motion effects.
+                            Data is stored in a global cloud database — meaning all campus users share the same lost &amp; found reports,
+                            event suggestions, and feedback log in real time.
+                        </p>
+                        <div class="link-stack">
+                            <a href="https://openrouter.ai/openrouter/free" target="_blank" rel="noopener noreferrer">OpenRouter free route</a>
+                            <a href="https://openrouter.ai/models?pricing=free" target="_blank" rel="noopener noreferrer">Browse free models</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-panel glass-strong" style="margin-top:18px;">
+                    <h3>Global Data Architecture</h3>
+                    <p>
+                        Campus Assist Pro uses a RESTful cloud database with four globally shared tables:
+                        <strong>lost_items</strong>, <strong>found_items</strong>, <strong>event_ideas</strong>, and <strong>mess_feedback</strong>.
+                        Every action — submitting a lost report, reporting a found item, or posting an event idea — is instantly saved to the cloud
+                        and visible to every other user visiting this site. Data auto-refreshes every 15 seconds so you always see the latest updates from your campus community.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">Saved successfully</div>
+
+    <!-- Main application script -->
+    <script src="script.js"></script>
+</body>
+</html>
